@@ -35,6 +35,7 @@
     let text = document.querySelector("#txt");
     let interval;
     startBtn.addEventListener("click",function (){
+            clearInterval(interval);
         if(text.value === ""){
             interval = setInterval(function () {
                 display.innerText=parseInt(display.innerText)+1;
