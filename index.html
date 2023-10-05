@@ -4,59 +4,104 @@
     <meta charset="UTF-8">
     <title>Task Two</title>
     <link rel="stylesheet" href="asets/css/bootstrap.css">
+    <style>
+        #con{
+            width: 200px;
+            height: 200px;
+        }
+    </style>
 </head>
 <body>
+<section class="container mt-5">
+    <h1 id="main">Traversing Methods in Jquery</h1>
+    <section class="row">
+        <div class="col-3">
+            <input id="input" class="form-control" type="text" placeholder="input">
+            <button id="btn" class="btn btn-danger mt-2">Test</button>
 
-<section class="container">
-    <h1>Counter.!</h1>
-    <div class="row">
-        <div class="col-4">
-            <input id="txt" class="form-control" type="number" placeholder="Input a Number" value="0">
-            <button id="btnStart" class="btn btn-primary mt-2">Start</button>
-            <button id="btnStop" class="btn btn-danger mt-2">Stop</button>
-            <button id="btnMinus" class="btn btn-warning mt-2">-</button>
-            <button id="btnIncrement" class="btn btn-success mt-2">+</button>
         </div>
-        <div class="offset-1 col-3 shadow overflow-x-hidden d-flex justify-content-center align-items-center"
-             style="height: 50vh">
-            <h1 id="display" class="text-danger" style="font-size: 8em">0</h1>
+        <div class="col-5">
+            <ol class="list-group" id="task">
+
+            </ol>
         </div>
-    </div>
+        <div class="col">
+            <div id="con" class="shadow">
+                <img src="sss" class="w-100 h-100" alt="">
+            </div>
+        </div>
+    </section>
+    <section class="row mt-5">
+        <div class="col-12">
+            <ul id="ul" class="list-group">
+                <li>append()</li>
+                <li>prepend()</li>
+                <li>remove()</li>
+                <li>text()</li>
+                <li>val()</li>
+                <li>click()</li>
+                <li>attr()</li>
+                <li>css</li>
+            </ul>
+        </div>
+    </section>
 </section>
 
+
+<script src="asets/js/code.jquery.com_jquery-3.7.1.min.js"></script>
 <script>
-    let startBtn=document.querySelector("#btnStart");
-    let display=document.querySelector("#display");
-    let stopBtn=document.querySelector("#btnStop");
 
-    let minus= document.querySelector("#btnMinus");
-    let increment= document.querySelector("#btnIncrement");
+    $('#main').css({
+        "color": 'red',
+        "font-size":'40px'
+    });
 
-    let text = document.querySelector("#txt");
-    let interval;
-    startBtn.addEventListener("click",function (){
-            clearInterval(interval);
-        if(text.value === ""){
-            interval = setInterval(function () {
-                display.innerText=parseInt(display.innerText)+1;
-            },1000);
-        }else {
-            display.innerText=text.value;
-            interval = setInterval(function () {
-                display.innerText=parseInt(display.innerText)+1;
-                text.value="";
-            },1000);
-        }
+
+    //so how to get and change text of an element.?
+    $('h1').text(); //will return the text content of the h1
+
+    //so then how to change?
+    $('h1').text("jQuery is Awesome.! :-D"); // you can change text like this
+
+
+
+    //Then how to get input filed typed values from a text filed.?
+    $('input').val(); // val() method will input field typed value
+
+    //if you want to change the input value
+    $('input').val('1000');
+
+
+    //so then how to remove elements.?
+    // $('li').remove();
+
+
+    //how to add elements using jQuery
+    //you can simply add html element as a string
+    //no need of creating dom element
+    $('#task').append('<li class="list-group-item">B</li>');
+    $('#task').prepend('<li class="list-group-item">A</li>');
+
+
+
+    //how to access attributes.?
+    $('img').attr('src');
+    $('img').attr('src','');
+
+
+
+
+
+    $("#btn").click(function(){
+        let val = $('#input').val();
+        $('#task').append('<li class="list-group-item">'+val+'</li>');
+        $('img').attr('src',val);
     });
-    stopBtn.addEventListener("click",function (){
-       clearInterval(interval);
-    });
-    increment.addEventListener("click",function (){
-        display.innerText=parseInt(display.innerText)+1;
-    });
-    minus.addEventListener("click",function (){
-        display.innerText=parseInt(display.innerText)-1;
-    });
+
+
+
+
 </script>
 </body>
+
 </html>
