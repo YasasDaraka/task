@@ -525,13 +525,13 @@
 
   btnHomeElements.forEach(function(element) {
     element.addEventListener("click", function() {
-      if (home.style.display==="none"){
-        home.style.display = "block";
+      if (index.style.display==="none"){
+        index.style.display = "block";
         item.style.display = "none";
         customer.style.display = "none";
         order.style.display = "none";
       }else{
-        home.style.display = "none";
+        index.style.display = "none";
       }
     });
   });
@@ -543,7 +543,7 @@
       if (customer.style.display==="none"){
         customer.style.display = "block";
         item.style.display = "none";
-        home.style.display = "none";
+        index.style.display = "none";
         order.style.display = "none";
       }else{
         customer.style.display = "none";
@@ -558,7 +558,7 @@
       if (item.style.display==="none"){
         item.style.display = "block";
         customer.style.display = "none";
-        home.style.display = "none";
+        index.style.display = "none";
         order.style.display = "none";
       }else{
         item.style.display = "none";
@@ -573,7 +573,7 @@
       if (order.style.display==="none"){
         order.style.display = "block";
         customer.style.display = "none";
-        home.style.display = "none";
+        index.style.display = "none";
         item.style.display = "none";
       }else{
         order.style.display = "none";
@@ -584,12 +584,12 @@
   btnCus.addEventListener("click",function () {
     if (customer.style.display==="none"){
       customer.style.display = "block";
-      home.style.display = "none";
+      index.style.display = "none";
       item.style.display = "none";
       order.style.display = "none";
     }else{
       customer.style.display = "none";
-      home.style.display = "block";
+      index.style.display = "block";
       item.style.display = "none";
       order.style.display = "none";
     }
@@ -612,12 +612,12 @@
   btnItem.addEventListener("click",function () {
     if (item.style.display==="none"){
       item.style.display = "block";
-      home.style.display = "none";
+      index.style.display = "none";
       customer.style.display = "none";
       order.style.display = "none";
     }else{
       item.style.display = "none";
-      home.style.display = "block";
+      index.style.display = "block";
       customer.style.display = "none";
       order.style.display = "none";
     }
@@ -640,11 +640,11 @@
   btnOrder.addEventListener("click",function () {
     if(order.style.display==="none"){
       order.style.display = "block";
-      home.style.display = "none";
+      index.style.display = "none";
       customer.style.display = "none";
       item.style.display = "none";
     }else {
-      home.style.display = "block";
+      index.style.display = "block";
       customer.style.display = "none";
       item.style.display = "none";
       order.style.display = "none";
