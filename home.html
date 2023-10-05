@@ -110,6 +110,7 @@
         <button class="btn btn-primary ms-3 mb-3 ms-md-3 ms-lg-3" type="submit">Search</button>
         <button class="btn btn-danger ms-3 mb-3 ms-md-3 ms-lg-3" type="button">Delete</button>
         <button class="btn btn-warning ms-3 mb-3 ms-md-3 ms-lg-3" type="reset">Clear</button>
+        <button id="get-all-cus" class="btn btn-warning ms-3 mb-3 ms-md-3 ms-lg-3" type="reset">Get All</button>
         <button class="btn btn-primary ms-3 mb-3 ms-md-3 ms-lg-3">
           <a id="add-cus" href="#" class="text-white text-decoration-none">Add Customer</a></button>
       </div>
@@ -711,14 +712,21 @@
       salary: cusSalary
     };
     cusAr.push(custom);
-    let li=`<tr>
-          <td>`+cusId+`</td>
-          <td>`+cusName+`</td>
-          <td>`+cusAddress+`</td>
-          <td>`+cusSalary+`</td>
-        </tr>`;
-    $('#tbody').append(li);
   });
+  $("#get-all-cus").click(function(){
+    $('#tbody').empty();
+    cusAr.forEach(function (ar){
+      let li=`<tr>
+          <td>`+ar.id+`</td>
+          <td>`+ar.name+`</td>
+          <td>`+ar.address+`</td>
+          <td>`+ar.salary+`</td>
+        </tr>`;
+      $('#tbody').append(li);
+    });
+
+  });
+
 </script>
 </body>
 </html>
